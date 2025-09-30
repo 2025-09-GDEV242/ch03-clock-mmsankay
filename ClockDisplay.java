@@ -1,11 +1,13 @@
 
 /**
- * This is the 24 hour INTERNAL BRANCH
+ * This is the 12 hour INTERNAL BRANCH
  * 
  * The ClockDisplay class implements a digital clock display for a
- * American-style 12 hour clock. The clock shows hours and minutes. The 
- * range of the clock is 00:00 AM (midnight) to 23:59 PM (one minute before 
- * midnight).
+ * American-style 12 hour clock. The clock shows hours and minutes.
+ * 
+ * The internal range of the clock is 00:00 (midnight) to 11:59 
+ * In order to track AM or PM we will need additional Fields and logic to
+ * handle the switch in merdian.
  * 
  * The clock display receives "ticks" (via the timeTick method) every minute
  * and reacts by incrementing the display. This is done in the usual clock
@@ -26,7 +28,7 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
         updateDisplay();
     }
@@ -38,7 +40,7 @@ public class ClockDisplay
      */
     public ClockDisplay(int hour, int minute)
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
         setTime(hour, minute);
     }
@@ -65,12 +67,6 @@ public class ClockDisplay
         hours.setValue(hour);
         minutes.setValue(minute);
         updateDisplay();
-    }
-
-    /**
-     * Return the current time of this display in the format HH:MM.
-     */
-    public String getTime()
     {
         return displayString;
     }
