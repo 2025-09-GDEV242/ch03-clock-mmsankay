@@ -1,7 +1,9 @@
 
 /**
+ * This is the 24 hour INTERNAL BRANCH
+ * 
  * The ClockDisplay class implements a digital clock display for a
- * American-style 24 hour clock. The clock shows hours and minutes. The 
+ * American-style 12 hour clock. The clock shows hours and minutes. The 
  * range of the clock is 00:00 AM (midnight) to 23:59 PM (one minute before 
  * midnight).
  * 
@@ -10,7 +12,7 @@
  * fashion: the hour increments when the minutes roll over to zero.
  * 
  * @author Marian M Sankay
- * @version 2025.22.25
+ * @version 2025.09.25
  */
 public class ClockDisplay
 {
